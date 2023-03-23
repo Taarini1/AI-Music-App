@@ -1,7 +1,9 @@
-song_status=""
+song_1status="";
+song_2status=""
 song1=""
 song2=""
 scoreLW=0
+scoreRW=0
 
 function preload(){
     song1=loadSound("Bones.mp3");
@@ -43,6 +45,7 @@ console.log("Right wrist X = "+rightWristX+"Right Wrist Y = "+rightWristY);
 console.log("Left wrist X = "+leftWristX+"Left Wrist Y = "+leftWristY);
   
  scoreLW=results[0].pose.keypoints[9].score;
+ scoreRW=results[0].pose.keypoints[10].score;
 
 
 }
@@ -72,6 +75,18 @@ if(statussong_1==false)   {
     document.getElementById("song_name").innerHTML="Bones";
 }
 
+
+
+}
+
+if(scoreRW>=0.2){
+    circle(rightWristX,rightWristY,20);  
+    song1.stop();
+    if(statussong_1==false)   {
+        song2.play();
+        document.getElementById("song_name").innerHTML="Lily";
+    }
+    
 
 }
 
