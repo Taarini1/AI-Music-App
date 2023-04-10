@@ -89,7 +89,16 @@ if(scoreRW>=0.2){
     
 
 }
+if(scoreLW>=0.2){
+    circle(leftWristX,leftWristY,20);  
+    song1.stop();
+    if(statussong_2==false)   {
+        song1.play();
+        document.getElementById("song_name").innerHTML="Bones";
+    }
+    
 
+}
 
 
    
